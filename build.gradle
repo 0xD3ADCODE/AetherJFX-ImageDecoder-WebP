@@ -1,0 +1,25 @@
+plugins {
+    id 'java'
+    id 'org.openjfx.javafxplugin' version '0.1.0'
+}
+
+group = 'javafx.iio.plugin'
+version = 'v1.0'
+
+repositories {
+    mavenCentral()
+}
+
+javafx {
+    sdk = AETHER_JFX_SDK_PATH
+    modules = ['javafx.base', 'javafx.graphics']
+    configuration = "compileOnly"
+}
+
+dependencies {
+    // JNA
+    implementation 'net.java.dev.jna:jna:5.14.0'
+}
+
+compileJava.options.encoding = 'UTF-8'
+System.setProperty('file.encoding', 'UTF-8')
